@@ -1,4 +1,6 @@
-<img src="IMGS/Logo.jpeg" alt="NEXXUS-FANDOM" width="300" height="200">
+<p align="center">
+  <img src="IMGS/Logo.jpeg" alt="Me Logo" width="250" height="250">
+</p>
 
 # NEXXUS-FANDOM Website
 
