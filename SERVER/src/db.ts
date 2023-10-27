@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 import 'dotenv/config';
 
+// Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
@@ -13,8 +14,8 @@ const firebaseConfig = {
   databaseURL: process.env.DATABASE_URL,
 };
 
-console.log(firebaseConfig);
-
+// Initialize firebase app
 const app = initializeApp(firebaseConfig);
 
+// Export database instance
 export const db = getDatabase(app);
