@@ -1,17 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route } from 'wouter';
+
 import Index from './components/Index'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
     <>
+      <Route path="/">
         <Index />
+      </Route>
     </>
   )
 }
-
-export default App
