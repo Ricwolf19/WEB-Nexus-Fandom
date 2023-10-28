@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="IMGS/Logo.jpeg" alt="Me Logo" width="250" height="250">
+  <img src="img/Logo.jpeg" alt="Me Logo" width="250" height="250">
 </p>
 
 # NEXXUS-FANDOM Website
