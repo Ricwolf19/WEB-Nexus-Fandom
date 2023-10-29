@@ -1,6 +1,6 @@
 import { Route } from 'wouter';
 
-import Index from './components/Index'
+import Index from './pages'
 
 export default function App() {
   return (
