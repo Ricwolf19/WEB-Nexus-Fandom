@@ -1,11 +1,13 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
+import React, { useEffect, useState, useMemo, ChangeEvent, FormEvent } from 'react';
 import md5 from 'md5';
 import { Link } from 'wouter';
+
+const PRIV_KEY = import.meta.env.VITE_PRIV_KEY as string;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY as string;
 
 // Define the character object structure
 type Character = {
   name: string;
-  description: string;
   thumbnail: {
     path: string;
     extension: string;
@@ -13,13 +15,13 @@ type Character = {
 };
 
 // Marvel API keys
-const PUBLIC_KEY = '80103ede5458bd09e6b4fa872878bbda';
-const PRIV_KEY = 'a0fa86726db48a599398ed659dc8b25ffc55fc92';
 
 const MarvelComponent: React.FC = () => {
   // State variables to hold characters and search term
   const [characters, setCharacters] = useState<Character[]>([]);
   const [search, setSearch] = useState<string>('');
+
+  const filteredCharacters = useMemo(() => characters.filter(char => !char.thumbnail.path.includes("not_available")), [characters])
 
   useEffect(() => {
     // Create a unique timestamp for the API request
@@ -79,7 +81,7 @@ const MarvelComponent: React.FC = () => {
       </form>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {characters.map((character, index) => (
+        {filteredCharacters.map((character, index) => (
           <div
             key={index}
             className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center"
@@ -90,7 +92,6 @@ const MarvelComponent: React.FC = () => {
               className="rounded-full w-32 h-32"
             />
             <h3 className="text-md font-bold">{character.name}</h3>
-            <p className="p-1 text-xs text-gray-700 text-center">{character.description}</p>
           </div>
         ))}
       </div>
