@@ -31,7 +31,7 @@ const ContactForm = () => {
               First Name
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-200 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-200 placeholder-white::placeholder"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-400 placeholder-white::placeholder"
               type="text"
               id="grid-first-name"
               placeholder="Jane"
@@ -50,7 +50,7 @@ const ContactForm = () => {
               Last Name
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-200 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-200"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-400"
               type="text"
               id="grid-last-name"
               placeholder="Doe"
@@ -71,7 +71,7 @@ const ContactForm = () => {
               Email Address
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-200 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-200"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-400"
               type="email"
               id="grid-email"
               placeholder="jane@exp.com"
@@ -93,7 +93,7 @@ const ContactForm = () => {
             </label>
             <textarea
               rows={10}
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-200 mr-3 p-4 focus:bg-gray-200 leading-tight focus:outline-none"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 focus:bg-gray-400 leading-tight focus:outline-none"
               placeholder="Your message here..."
               id="grid-message"
               aria-label="Your message"

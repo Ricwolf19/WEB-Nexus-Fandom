@@ -1,3 +1,4 @@
+import Header from '../components/header';
 import Store from '../components/store';
 import { Link } from 'wouter';
 
@@ -34,26 +35,29 @@ const StoresSide = () => {
     const comicStores = maps.slice(3); // Comic stores
 
     return (
-      <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
-        <div className="mb-8 md:mb-0">
-          <h1 className="text-2xl font-bold">Game Stores</h1>
-          {gameStores.map((map, index) => (
-            <Store key={index} name={map.name} mapSrc={map.mapSrc} />
-          ))}
-        </div>
-        <div>
-          <h1 className="text-2xl font-bold">Comic Stores</h1>
-          {comicStores.map((map, index) => (
-            <Store key={index} name={map.name} mapSrc={map.mapSrc} />
-          ))}
-        </div>
-        {/* Add a link to go back to the index */}
-        <div className="my-4">
-          <Link href="/">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Back to Index
-            </button>
-          </Link>
+      <div className="min-h-screen flex flex-col bg-black text-white">
+        <Header />
+        <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
+          <div className="mb-8 md:mb-0">
+            <h1 className="text-2xl font-bold">Game Stores</h1>
+            {gameStores.map((map, index) => (
+              <Store key={index} name={map.name} mapSrc={map.mapSrc} />
+            ))}
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold">Comic Stores</h1>
+            {comicStores.map((map, index) => (
+              <Store key={index} name={map.name} mapSrc={map.mapSrc} />
+            ))}
+          </div>
+          {/* Add a link to go back to the index */}
+          <div className="my-4">
+            <Link href="/">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Back to Index
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );
