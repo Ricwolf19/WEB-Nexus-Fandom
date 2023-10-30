@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "firebase": "^10.5.2",
     "leaflet": "^1.9.4",
     "md5": "^2.3.0",

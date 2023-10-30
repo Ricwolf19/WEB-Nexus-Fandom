@@ -1,7 +1,10 @@
 import { Link } from 'wouter';
+import Header from '../components/header';
 
 const Index = () => {
   return (
+    <>
+    <Header />
     <div className="index-container p-8">
       <h1>Welcome to My Geek Store</h1>
       <p>Discover our game and comic stores!</p>
@@ -18,6 +21,7 @@ const Index = () => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 
