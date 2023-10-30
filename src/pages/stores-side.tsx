@@ -1,12 +1,11 @@
 import Store from '../components/store';
 import { Link } from 'wouter';
-      
 
 const StoresSide = () => {
     const maps = [
         {
           name: "MAS VIDEOJUEGOS",
-          mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14001.595690599088!2d-106.12377261284176!3d28.677711100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea43acff266547%3A0xa5affbbd366009a2!2sMAS%20VIDEOJUEGOS!5e0!3m2!1sen!2smx!4v1698612115158!5m2!1sen!2smx'
+          mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14001.595690599088!2d-106.12377261284176!3d28.677711100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea43acff266547%3A0xa5affbbd366009a2!2sMAS%20VIDEOJUEGOS!5e0!3m2!1en!2smx!4v1698612115158!5m2!1en!2smx'
         },
         {
           name: "Game Over Shop CUU",
@@ -28,37 +27,36 @@ const StoresSide = () => {
           name: "DEKAI Manga & Comics",
           mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14007.142600641742!2d-106.09313131284176!3d28.636185700000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea434b85e7f345%3A0xf5b1e0cf86940b94!2sDEKAI%20Manga%20%26%20Comics!5e0!3m2!1es-419!2smx!4v1698636875998!5m2!1es-419!2smx" 
         },
-      ];
+    ];
 
-    
-        const gameStores = maps.slice(0, 3); // Tiendas de juegos
-        const comicStores = maps.slice(3); // Tiendas de cómics
-      
-        return (
-          <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
-            <div className="mb-8 md:mb-0">
-              <h1 className="text-2xl font-bold">Tiendas de Juegos</h1>
-              {gameStores.map((map, index) => (
-                <Store key={index} name={map.name} mapSrc={map.mapSrc} />
-              ))}
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold">Tiendas de Cómics</h1>
-              {comicStores.map((map, index) => (
-                <Store key={index} name={map.name} mapSrc={map.mapSrc} />
-              ))}
-            </div>
-            {/* Agregar un enlace para regresar al índice */}
-            <div className="my-4">
-              <Link href="/">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Volver al Índice
-                </button>
-              </Link>
-            </div>
-          </div>
-        );
-      };
-      
-      export default StoresSide;
-      
+    // Split the stores array into two sections: gameStores and comicStores
+    const gameStores = maps.slice(0, 3); // Game stores
+    const comicStores = maps.slice(3); // Comic stores
+
+    return (
+      <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
+        <div className="mb-8 md:mb-0">
+          <h1 className="text-2xl font-bold">Game Stores</h1>
+          {gameStores.map((map, index) => (
+            <Store key={index} name={map.name} mapSrc={map.mapSrc} />
+          ))}
+        </div>
+        <div>
+          <h1 className="text-2xl font-bold">Comic Stores</h1>
+          {comicStores.map((map, index) => (
+            <Store key={index} name={map.name} mapSrc={map.mapSrc} />
+          ))}
+        </div>
+        {/* Add a link to go back to the index */}
+        <div className="my-4">
+          <Link href="/">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Back to Index
+            </button>
+          </Link>
+        </div>
+      </div>
+    );
+};
+
+export default StoresSide;
