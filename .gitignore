@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Api Keys Marvel
+src/components/marvel.tsx
