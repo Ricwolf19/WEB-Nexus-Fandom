@@ -17,7 +17,33 @@ export default function MarvelSiteCharacter() {
           error ? <div>{error}</div> :
 
             <div>
-              <h1>{character?.name}</h1>
+              <h1>{character!.name}</h1>
+              <img
+                src={`${character!.thumbnail.path}/portrait_incredible.${character!.thumbnail.extension}`}
+                alt={character!.name}
+                className="rounded-full w-32 h-32"
+              />
+              {character?.description && <p>{character.description}</p>}
+              {character!.comics.items.length > 0 &&
+                <div>
+                  <h2>Comics</h2>
+                  <ul>
+                    {character!.comics.items.map(comic => (
+                      <li key={comic.name}>{comic.name}</li>
+                    ))}
+                  </ul>
+                </div>
+              }
+              {character!.series.items.length > 0 &&
+                <div>
+                  <h2>Series</h2>
+                  <ul>
+                    {character!.series.items.map(serie => (
+                      <li key={serie.name}>{serie.name}</li>
+                    ))}
+                  </ul>
+                </div>
+              }
             </div>
       }
 
