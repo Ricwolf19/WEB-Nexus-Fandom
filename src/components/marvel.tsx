@@ -1,26 +1,18 @@
 import React, { useEffect, useState, useMemo, ChangeEvent, FormEvent } from 'react';
-import md5 from 'md5';
 import { Link } from 'wouter';
-
-const PRIV_KEY = import.meta.env.VITE_PRIV_KEY as string;
-const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY as string;
-
-// Define the character object structure
-type Character = {
-  name: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
-};
+import md5 from 'md5';
+import type { Character } from '../types';
 
 // Marvel API keys
+const PRIV_KEY = import.meta.env.VITE_PRIV_KEY as string;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY as string;
 
 const MarvelComponent: React.FC = () => {
   // State variables to hold characters and search term
   const [characters, setCharacters] = useState<Character[]>([]);
   const [search, setSearch] = useState<string>('');
 
+  // Filter out characters with no image
   const filteredCharacters = useMemo(() => characters.filter(char => !char.thumbnail.path.includes("not_available")), [characters])
 
   useEffect(() => {
@@ -63,7 +55,7 @@ const MarvelComponent: React.FC = () => {
       <h1 className="text-2xl font-bold text-center my-2">Marvel Characters</h1>
 
       <form onSubmit={handleSearchSubmit} className="w-full max-w-sm mx-auto my-4">
-        <div className="flex items-center border-b border-b-2 border-teal-500 py-2">
+        <div className="flex items-center border border-b-2 border-teal-500 py-2">
           <input
             className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
             type="text"
@@ -81,17 +73,19 @@ const MarvelComponent: React.FC = () => {
       </form>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {filteredCharacters.map((character, index) => (
+        {filteredCharacters.map(character => (
           <div
-            key={index}
+            key={character.id}
             className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center"
           >
+            <Link href={`/marvel-side/character/${character.id}`}>
             <img
               src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
               alt={character.name}
               className="rounded-full w-32 h-32"
             />
             <h3 className="text-md font-bold">{character.name}</h3>
+            </Link>
           </div>
         ))}
       </div>
