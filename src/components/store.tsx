@@ -12,8 +12,8 @@ const Store: React.FC<StoreProps> = ({ name, mapSrc }) => {
       <div className="map-container">
         <iframe
           title={name}
-          width="600"
-          height="450"
+          width="400"
+          height="250"
           loading="lazy"
           src={mapSrc}
           style={{ border: 0 }}
