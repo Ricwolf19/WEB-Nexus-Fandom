@@ -5,6 +5,7 @@ import MarvelSite from './pages/marvel-site';
 import MarvelSiteCharacter from './pages/marvel-site-character';
 import LogIn from './pages/login-site';
 import ContactUs from './pages/contact-side';
+import VideoGames from './pages/games-side';
 
 export default function App() {
   return (
@@ -22,7 +23,7 @@ export default function App() {
         <MarvelSiteCharacter />
       </Route>
       <Route path="/games-site">
-
+        <VideoGames />
       </Route>
       <Route path="/contact-side">
         <ContactUs />

@@ -1,5 +1,6 @@
 import React from 'react';
-function Header() {
+
+const Header = () => {
     return (
         <header className="bg-black text-white py-4">
             <div className="container mx-auto flex justify-between items-center">

@@ -1,7 +1,7 @@
 import Header from "../components/header";
 import ContactForm from "../components/contact-form";
 
-function ContactUs() {
+const ContactUs = () => {
     return (
       <div className="min-h-screen flex flex-col bg-black text-white">
         <Header />
