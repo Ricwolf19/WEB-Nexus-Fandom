@@ -3,6 +3,7 @@ import Index from './pages/index';
 import StoresSide from './pages/stores-side';
 import MarvelSite from './pages/marvel-site';
 import MarvelSiteCharacter from './pages/marvel-site-character';
+import LogIn from './pages/login-site';
 
 export default function App() {
   return (
@@ -19,6 +20,15 @@ export default function App() {
       <Route path="/marvel-side/character/:id">
         <MarvelSiteCharacter />
       </Route>
+      <Route path="/games-site">
+
+      </Route>
+      <Route path="/contact-side">
+
+      </Route>
+      <Route path="/login">
+        <LogIn />
+      </Route>  
     </>
   );
 }
