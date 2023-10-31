@@ -1,4 +1,5 @@
 import React from 'react';
+
 function Header() {
     return (
         <header className="bg-black text-white py-4">
@@ -10,6 +11,7 @@ function Header() {
                     <a href="/games-site" className="hover:text-gray-300">VideoGames</a>
                     <a href="/stores-side" className="hover:text-gray-300">Stores</a>
                     <a href="/contact-side" className="hover:text-gray-300">Contact Us</a>
+                    <a href="/register" className='hover:text-gray-300'>Register</a>
                     <a href="/login" className="hover:text-gray-300">Log In</a>
                 </nav>
             </div>
