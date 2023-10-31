@@ -24,3 +24,16 @@ export type Character = {
     }[];
   }
 };
+
+// Define the game object structure
+export type Game = {
+  name: string;
+  background_image: string;
+  released: string;
+  rating: number;
+  platforms: {
+    platform: {
+      name: string;
+    };
+  }[];
+};
