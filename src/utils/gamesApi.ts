@@ -5,6 +5,11 @@ export const getGames = async (search: string) => {
     `https://api.rawg.io/api/games?${search ? `search=${search}&` : ''}page_size=40&key=${apiKey}`
   );
   const { results } = await response.json();
-  console.log(results)
+
+  // Even this doesn't work
+  if (!results || !results.length) {
+    return [];
+  }
+
   return results;
 };
