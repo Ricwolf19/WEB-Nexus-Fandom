@@ -11,8 +11,6 @@ const Header = () => {
                     <Link href="/games-site" className="hover:text-gray-300">VideoGames</Link>
                     <Link href="/stores-side" className="hover:text-gray-300">Stores</Link>
                     <Link href="/contact-side" className="hover:text-gray-300">Contact Us</Link>
-                    <Link href="/register" className='hover:text-gray-300'>Register</Link>
-                    <Link href="/login" className="hover:text-gray-300">Log In</Link>
                 </nav>
             </div>
         </header>

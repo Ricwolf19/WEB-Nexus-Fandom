@@ -1,10 +1,20 @@
-import { Link, useRoute } from 'wouter';
+import { auth } from '../utils/firebase';
+import { Link, useRoute, useLocation } from 'wouter';
 import { useFetchData } from '../hooks/useFetchData';
 import { getCharacter } from '../utils/marvelApi';
 
 export default function MarvelSiteCharacter() {
   const [match, params] = useRoute('/marvel-side/character/:id');
   const { data: character, loading, error } = useFetchData(getCharacter, params?.id);
+
+  const [, setLocation] = useLocation();
+  const user = auth.currentUser;
+
+  if (!user) {
+    setLocation('/');
+    return null;
+  }
+
 
   return (
     <div>
