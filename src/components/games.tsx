@@ -20,17 +20,19 @@ const GamesSide: React.FC = () => {
 
           error ? <p>{error}</p> :
 
-            games?.map((game, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center">
-                <img src={game.background_image} alt={game.name} className="rounded-full w-32 h-32" />
-                <h3 className="text-md font-bold">{game.name}</h3>
-                <p className="p-1 text-xs text-gray-700 text-center">Released: {game.released}</p>
-                <p className="p-1 text-xs text-gray-700 text-center">Rating: {game.rating}/5</p>
-                <p className="p-1 text-xs text-gray-700 text-center">
-                  Platforms: {game.platforms.map((platform) => platform.platform.name).join(', ')}
-                </p>
-              </div>
-            ))
+            games!.length < 1 ? <p>No games found</p> :
+
+              games?.map((game, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center">
+                  <img src={game.background_image} alt={game.name} className="rounded-full w-32 h-32" />
+                  <h3 className="text-md font-bold">{game.name}</h3>
+                  <p className="p-1 text-xs text-gray-700 text-center">Released: {game.released}</p>
+                  <p className="p-1 text-xs text-gray-700 text-center">Rating: {game.rating}/5</p>
+                  <p className="p-1 text-xs text-gray-700 text-center">
+                    Platforms: {game.platforms.map((platform) => platform.platform.name).join(', ')}
+                  </p>
+                </div>
+              ))
         }
       </div>
     </div>

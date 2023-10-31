@@ -28,23 +28,26 @@ const MarvelComponent: React.FC = () => {
 
         error ? <div>{error}</div> :
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {filteredCharacters?.map(character => (
-              <div
-                key={character.id}
-                className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center"
-              >
-                <Link href={`/marvel-side/character/${character.id}`}>
-                  <img
-                    src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
-                    alt={character.name}
-                    className="rounded-full w-32 h-32"
-                  />
-                  <h3 className="text-md font-bold">{character.name}</h3>
-                </Link>
-              </div>
-            ))}
-          </div>
+          filteredCharacters!.length < 1 ? <div>No characters found</div> :
+
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {filteredCharacters?.map(character => (
+                <div
+                  key={character.id}
+                  className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center"
+                >
+                  <Link href={`/marvel-side/character/${character.id}`}>
+                    <img
+                      src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
+                      alt={character.name}
+                      className="rounded-full w-32 h-32"
+                    />
+                    <h3 className="text-md font-bold">{character.name}</h3>
+                  </Link>
+                </div>
+              ))}
+            </div>
       }
     </div>
   );
