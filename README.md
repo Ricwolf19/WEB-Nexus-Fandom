@@ -2,9 +2,9 @@
   <img src="img/Logo.jpeg" alt="Me Logo" width="250" height="250">
 </p>
 
-# NEXXUS-FANDOM Website
+# NEXUS-FANDOM Website
 
-Welcome to the NEXXUS-FANDOM website! This immersive web platform is crafted using cutting-edge technologies such as React, TypeScript, and Tailwind CSS. NEXXUS-FANDOM serves as a hub for all things Marvel, video games, and the geolocations of stores in Chihuahua offering Marvel and video game-related merchandise.
+Welcome to the NEXUS-FANDOM website! This immersive web platform is crafted using cutting-edge technologies such as React, TypeScript, and Tailwind CSS. NEXUS-FANDOM serves as a hub for all things Marvel, video games, and the geolocations of stores in Chihuahua offering Marvel and video game-related merchandise.
 
 ## Key Features
 
@@ -15,7 +15,7 @@ Welcome to the NEXXUS-FANDOM website! This immersive web platform is crafted usi
 
 ## Meet the Team
 
-NEXXUS-FANDOM has been brought to life by a dedicated team of five talented individuals:
+NEXUS-FANDOM has been brought to life by a dedicated team of five talented individuals:
 
 1. Ricardo Tapia
 2. Hector Loyo
@@ -30,6 +30,7 @@ Our technology stack includes:
 - **Framework**: React
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
+- **Database**: Firebase (user data)
 
 ## Installation and Setup
 
@@ -53,7 +54,4 @@ npm start
 
 We wholeheartedly invite contributions from the community! If you encounter any issues or have valuable suggestions for improvement, please don't hesitate to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Your enthusiasm and support are greatly appreciated! 🚀
 
