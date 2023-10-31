@@ -1,13 +1,13 @@
-import Header from "../components/header";
+// games.tsx
+import GamesSide from '../components/games';
 
-const VideoGames = () => {
-    return (
-        <div className="min-h-screen flex flex-col bg-black text-white">
-        <Header />
-            <div>
-                <h1>Video Games</h1>
-            </div>
-        </div>
-    )
-}
-export default VideoGames;
+const Games = () => {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold text-center my-2">Video Games</h1>
+      <GamesSide />
+    </div>
+  );
+};
+
+export default Games;
