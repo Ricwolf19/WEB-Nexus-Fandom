@@ -36,9 +36,12 @@ const Header = () => {
             </Link>
           </div>
           <div className="hidden md:flex gap-6">
-            <button className="border-2 border-red-500 bg-red-500/30 hover:bg-red-500 p-2 rounded font-bold">
-              Log Out
-            </button>
+            <Link href="/register" className="border-2 border-blue-500 bg-blue-500/30 hover:bg-blue-500 p-2 rounded">
+              Register
+            </Link>
+            <Link href="/login" className="border-2 border-red-500 bg-red-500/30 hover:bg-red-500 p-2 rounded font-bold">
+              Log In
+            </Link>
           </div>
           <div className="md:hidden flex items-center">
             <button onClick={toggleMobileMenu} className="text-3xl">
@@ -65,9 +68,12 @@ const Header = () => {
               <Link href="/contact-side" className="hover:text-gray-300 hover:border-b-2 hover:border-indigo-500">
                 Contact Us
               </Link>
-              <button className="hover:text-gray-300 hover:border-b-2 hover:border-red-500">
+              <Link href="/register" className="hover:text-gray-300 hover:border-b-2 hover:border-blue-500">
+                Register
+              </Link>
+              <Link href="/login" className="hover:text-gray-300 hover:border-b-2 hover:border-red-500">
                 Log In
-              </button>
+              </Link>
             </div>
           </div>
         )}
