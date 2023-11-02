@@ -5,6 +5,7 @@ import type { Game } from '../types';
 import SearchBar from './search-bar';
 import { FaClock, FaExclamationCircle, FaInfoCircle } from 'react-icons/fa';
 import '../style.css';
+import { motion } from "framer-motion";
 
 const GamesSide: React.FC = () => {
   const [search, setSearch] = useState<string>('');
@@ -17,58 +18,63 @@ const GamesSide: React.FC = () => {
   return (
     <div className="container mx-auto px-4 items-center">
       <SearchBar onSubmit={handleSearchSubmit} />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      {loading ? (
-          <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#333333] bg-opacity-75">
-            <div className="max-w-lg w-full p-6 bg-[#333333] rounded-lg shadow-xl text-white">
-              <div className="text-center flex items-center p-6">
-                <FaClock className="text-blue-600 text-7xl mr-4" />
-                <h1 className="mb-2 text-yellow-400 text-6xl font-extrabold">
-                  Loading...
-                </h1>
-              </div>
-              <p className="text-2xl font-bold p-4 text-center">
-                Please wait while we load the content.
-              </p>
-            </div>
-          </div>
-        ) : error ? (
-          <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#333333] bg-opacity-75">
-                <div className="max-w-lg w-full p-6 bg-[#333333] rounded-lg shadow-xl text-white">
-                  <div className="text-center flex items-center p-6">
-                    <FaExclamationCircle className="text-red-500 text-7xl mr-8" />
-                    <h1 className="mb-2 text-red-500 text-6xl font-extrabold">
-                      Error!!!
-                    </h1>
-                  </div>
-                  <p className="text-3xl font-bold p-4 text-center text-blue-500">
-                    An error occurred: {error}
-                  </p>
-                  <p className="text-2xl font-bold text-center text-yellow-500">
-                    Please try again later. 
-                  </p>
-                </div>
-          </div>
-        ) : games!.length < 1 ? (
-          <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#333333] bg-opacity-75">
-            <div className="max-w-lg w-full p-6 bg-[#333333] rounded-lg shadow-xl text-white">
-              <div className="text-center flex items-center p-6">
-                <FaInfoCircle className="text-gray-400 text-9xl" />
-                <h1 className="text-gray-400 text-5xl font-extrabold">
-                  No Games Found
-                </h1>
-              </div>
-              <p className="text-2xl font-bold p-3 text-center text-yellow-500">
-                Try searching with different keywords.
-              </p>
-            </div>
-          </div>
-        ) :
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+{loading ? (
+  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#333333] bg-opacity-75">
+    <div className="w-full max-w-lg p-6 bg-[#333333] rounded-lg shadow-xl text-white text-center flex flex-col items-center">
+      <FaClock className="text-blue-600 text-5xl sm:text-7xl mb-4" />
+      <h1 className="mb-2 text-yellow-400 text-4xl sm:text-6xl font-extrabold">
+        Loading...
+      </h1>
+      <p className="text-xl sm:text-2xl font-bold mb-4">
+        Please wait while we load the content.
+      </p>
+    </div>
+  </div>
+) : error ? (
+  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#333333] bg-opacity-75">
+    <div className="w-full max-w-lg p-6 bg-[#333333] rounded-lg shadow-xl text-white text-center flex flex-col items-center">
+      <FaExclamationCircle className="text-red-500 text-5xl sm:text-7xl mb-4" />
+      <h1 className="mb-2 text-red-500 text-4xl sm:text-6xl font-extrabold">
+        Error!!!
+      </h1>
+      <p className="text-2xl sm:text-3xl font-bold mb-2 text-blue-500">
+        An error occurred: {error}
+      </p>
+      <p className="text-xl sm:text-2xl font-bold text-yellow-500">
+        Please try again later. 
+      </p>
+    </div>
+  </div>
+) : games!.length < 1 ? (
+  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#333333] bg-opacity-75">
+    <div className="w-full max-w-lg p-6 bg-[#333333] rounded-lg shadow-xl text-white text-center flex flex-col items-center">
+      <FaInfoCircle className="text-gray-400 text-5xl sm:text-9xl mb-4" />
+      <h1 className="text-gray-400 text-3xl sm:text-5xl font-extrabold mb-4">
+        No Games Found
+      </h1>
+      <p className="text-xl sm:text-2xl font-bold mb-2 text-yellow-500">
+        Try searching with different keywords.
+      </p>
+    </div>
+  </div>
+) : 
         games
         ?.filter((game) => game.background_image)
         ?.filter((game) => game.rating)
         .map((game, index) => (
-          <div key={index} className='bg-[#333333] bg-opacity-50 rounded-xl shadow-md p-2 flex flex-col items-center transition duration-300 ease-in-out transform hover:scale-105 mb-2'>
+          <motion.div
+          key={index}
+          className="bg-[#333333] bg-opacity-50 rounded-xl shadow-md p-2 flex flex-col items-center transition duration-300 ease-in-out transform hover:scale-105 mb-2"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 * index }}
+        >
             <div className='bg-white rounded-3xl shadow-xl h-full'>
               <div className='h-full grid rounded-3xl max-w-sm shadow-sm bg-slate-100 flex-col'>
                 <img
@@ -101,10 +107,10 @@ const GamesSide: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))
         }
-      </div>
+      </motion.div> // Aqui
     </div>
   );
 };

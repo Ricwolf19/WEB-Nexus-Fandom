@@ -3,6 +3,7 @@ import { auth } from '../utils/firebase';
 import Header from "../components/header";
 import ContactForm from "../components/contact-form";
 import '../style.css';
+import { motion } from 'framer-motion';
 
 const ContactUs = () => {
     const [, setLocation] = useLocation();
@@ -14,9 +15,20 @@ const ContactUs = () => {
     }
 
     return (
-        <div id="hero2" className="min-h-screen flex flex-col bg-black text-white">
+        <motion.div
+        id="hero2"
+        className="min-h-screen flex flex-col bg-black text-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        >
             <Header />
-            <div className="flex-grow flex items-center justify-center mt-10">
+            <motion.div
+            className="bg-[#5f5f5f] bg-opacity-25 md:col-span-8 p-10 border-red-600"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            >
                 <div className="max-w-screen-lg mx-auto p-5">
                     <div className="grid grid-cols-1 md:grid-cols-12 border border-red-600">
                         <div className="bg-[#333333] bg-opacity-95 md:col-span-4 p-10 text-white">
@@ -94,8 +106,8 @@ const ContactUs = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 }
 
