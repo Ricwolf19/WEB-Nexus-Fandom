@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import imgHitman from '../assets/img-login/img-hitman-login.jpg'
 import { Link } from 'wouter';
+import { BsArrowLeft } from 'react-icons/bs';
 
 interface FormInput {
     email: string;
@@ -27,8 +28,9 @@ const LogIn = () => {
     }
 
     return (
-        <div className="bg-black h-screen w-screen flex flex-col md:flex-row items-center">
+        <div className="bg-black h-screen w-screen flex flex-col md:flex-row items-center relative">
             <img src={imgHitman} alt="" className='w-full md:w-1/2 h-1/2 md:h-full object-contain' />
+            <div className='text-white absolute top-0 left-0 m-4 cursor-pointer'><Link href='/' ><BsArrowLeft size={30}/></Link></div>
             <div className='w-full h-full flex flex-col items-center justify-evenly text-white'>
                 <h2 className='text-5xl font-bold'>Log In</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className='w-3/4 md:w-1/2 flex flex-col space-y-6 text-'>

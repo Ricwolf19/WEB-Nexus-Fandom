@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import imgAbstergo from '../assets/img-register/img-abstergo.jpg';
 import { Link } from 'wouter';
+import { BsArrowLeft } from 'react-icons/bs';
 
 interface FormInput {
     email: string;
@@ -28,6 +29,7 @@ const Register = () => {
 
     return (
         <div className="bg-black h-screen w-screen flex flex-col-reverse md:flex-row items-center">
+            <div className='text-white absolute top-0 left-0 m-4 cursor-pointer'><Link href='/' ><BsArrowLeft size={30}/></Link></div>
             <div className='w-full h-full flex flex-col items-center justify-evenly text-white'>
                 <h2 className='text-5xl font-bold'>Register</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className='w-3/4 md:w-1/2 flex flex-col space-y-6 text-'>

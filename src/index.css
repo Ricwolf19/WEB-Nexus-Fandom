@@ -2,7 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: #191919;
-    color: white;
+
+.div-image {
+  display: inline-block;
+  position: relative;
 }
+
+.div-image div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 10px;
+  margin: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0; /* Establecer la opacidad inicial del texto en 0 */
+  transition: opacity 0.5s; /* Agregar una transición para suavizar la aparición/desaparición del texto */
+}
+
+.div-image:hover div {
+  opacity: 1; /* Hacer que el texto sea visible cuando se realiza un hover en .div-image */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+.animate-gradient {
+  animation: gradientAnimation 5s linear infinite;
+  background-size: 200% 100%; /* Controla la velocidad de la animación */
+}
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
