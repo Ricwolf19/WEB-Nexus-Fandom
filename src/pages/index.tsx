@@ -24,7 +24,6 @@ const Index = () => {
               <Link href='/home' className='hover:text-gray-300'>Enter as a guest?</Link>              
             </div>
         </div>
-      </div>
     </>
   );
 };
