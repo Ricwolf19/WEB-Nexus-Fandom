@@ -5,8 +5,8 @@ const ContactForm = () => {
   
     if (state.succeeded) {
       return (
-        <div className="h-full flex flex-wrap items-center justify-center text-white">
-            <div className="max-w-xl p-8 text-center bg-gray-800 shadow-xl rounded-3xl">
+        <div className="h-full flex flex-wrap items-center justify-center">
+            <div className="max-w-xl p-8 text-center bg-[#333333] shadow-xl rounded-3xl">
                 <h3 className="text-2xl mb-4 text-gray-200">
                 Thank you for reaching out to{" "}
                 <span className="text-red-500">Nexus</span>
@@ -24,14 +24,14 @@ const ContactForm = () => {
     }
   
     return (
-      <form className="bg-gray-500" onSubmit={handleSubmit}>
+      <form className="bg-opacity-50" onSubmit={handleSubmit}>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-first-name">
               First Name
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-400 placeholder-white::placeholder"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
               type="text"
               id="grid-first-name"
               placeholder="Jane"
@@ -46,11 +46,11 @@ const ContactForm = () => {
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-last-name">
               Last Name
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-400"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
               type="text"
               id="grid-last-name"
               placeholder="Doe"
@@ -67,11 +67,11 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-email">
+            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-email">
               Email Address
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-400"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
               type="email"
               id="grid-email"
               placeholder="jane@exp.com"
@@ -88,12 +88,12 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-message">
+            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-message">
               Your Message
             </label>
             <textarea
               rows={10}
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-white mr-3 p-4 focus:bg-gray-400 leading-tight focus:outline-none"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
               placeholder="Your message here..."
               id="grid-message"
               aria-label="Your message"
@@ -108,7 +108,7 @@ const ContactForm = () => {
           </div>
           <div className="flex justify-between w-full px-3 mt-2">
             <button
-              className="shadow bg-red-600 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+              className="shadow bg-red-600 hover:bg-red-400 focus:shadow-outline focus:outline-none text-gray-100 font-bold py-2 px-6 rounded placeholder:text-[#b8b8b8]"
               type="submit"
               disabled={state.submitting}
             >

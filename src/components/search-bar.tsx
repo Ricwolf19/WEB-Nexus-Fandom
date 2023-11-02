@@ -19,17 +19,17 @@ export default function SearchBar({ onSubmit }: Props) {
   };
 
   return (
-    <form onSubmit={handleSearchSubmit} className="w-full max-w-sm mx-auto my-4">
-      <div className="flex items-center border border-b-2 border-teal-500 py-2">
+    <form onSubmit={handleSearchSubmit} className="w-full max-w-sm mx-auto my-4 mb-16">
+      <div className="relative flex items-center bg-[#333333] border-b border-red-500 rounded-md h-14">
         <input
-          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+          className="h-full rounded appearance-none bg-transparent border-none w-full text-[#f1f1f1] px-4 leading-tight focus:outline-none focus:bg-[#616161] focus:text-[#f1f1f1] placeholder:text-gray-50"
           type="text"
           value={search}
           onChange={handleSearchChange}
           placeholder="Search..."
         />
         <button
-          className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+          className="absolute right-0 bg-red-500 hover:bg-red-600 focus:bg-red-700 text-white font-bold py-2 px-4 rounded h-full transition duration-300 ease-in-out"
           type="submit"
         >
           Search

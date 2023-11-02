@@ -2,6 +2,7 @@ import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from "../components/header";
 import ContactForm from "../components/contact-form";
+import '../style.css';
 
 const ContactUs = () => {
     const [, setLocation] = useLocation();
@@ -13,12 +14,12 @@ const ContactUs = () => {
     }
 
     return (
-        <div className="min-h-screen flex flex-col bg-black text-white">
+        <div id="hero2" className="min-h-screen flex flex-col bg-black text-white">
             <Header />
             <div className="flex-grow flex items-center justify-center mt-10">
                 <div className="max-w-screen-lg mx-auto p-5">
                     <div className="grid grid-cols-1 md:grid-cols-12 border border-red-600">
-                        <div className="bg-gray-800 md:col-span-4 p-10 text-white">
+                        <div className="bg-[#333333] bg-opacity-95 md:col-span-4 p-10 text-white">
                             <p className="text-sm font-regular uppercase mb-6">
                                 Contact Us
                             </p>
@@ -88,7 +89,7 @@ const ContactUs = () => {
                                 <span className="text-sm">Open 24/7</span>
                             </div>
                         </div>
-                        <div className="md:col-span-8 p-10 bg-gray-500 border-red-600">
+                        <div className="bg-[#5f5f5f] bg-opacity-95 md:col-span-8 p-10 border-red-600">
                             <ContactForm />
                         </div>
                     </div>
