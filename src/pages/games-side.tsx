@@ -4,6 +4,7 @@ import GamesSide from '../components/games';
 import Header from '../components/header';
 import { motion } from 'framer-motion';
 import '../style.css';
+import Footer from '../components/footer';
 
 const Games = () => {
   const [, setLocation] = useLocation();
@@ -15,7 +16,7 @@ const Games = () => {
   }
 
   return (
-    <div className='h-full w-full'>
+    <div className='h-full w-full bg-[#191919]'>
       <Header />
       <motion.header
         id='hero1'
@@ -46,6 +47,7 @@ const Games = () => {
         </div>
       </motion.header>
       <GamesSide />
+      <Footer/>
     </div>
   );
 };
