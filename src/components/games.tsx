@@ -3,7 +3,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { getGames } from '../utils/gamesApi';
 import type { Game } from '../types';
 import SearchBar from './search-bar';
-import { FaClock, FaExclamationCircle, FaInfoCircle } from 'react-icons/fa';
+import { FaClock, FaExclamationCircle, FaInfoCircle, FaStar } from 'react-icons/fa';
 import '../style.css';
 import { motion } from "framer-motion";
 
@@ -26,9 +26,9 @@ const GamesSide: React.FC = () => {
       >
 {loading ? (
   <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#333333] bg-opacity-75">
-    <div className="w-full max-w-lg p-6 bg-[#333333] rounded-lg shadow-xl text-white text-center flex flex-col items-center">
+    <div className="w-full max-w-lg p-6 bg-gray-950 rounded-lg shadow-xl text-white text-center flex flex-col items-center">
       <FaClock className="text-blue-600 text-5xl sm:text-7xl mb-4" />
-      <h1 className="mb-2 text-yellow-400 text-4xl sm:text-6xl font-extrabold">
+      <h1 className="mb-2 text-yellow-300 text-4xl sm:text-6xl">
         Loading...
       </h1>
       <p className="text-xl sm:text-2xl font-bold mb-4">
@@ -40,13 +40,13 @@ const GamesSide: React.FC = () => {
   <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#333333] bg-opacity-75">
     <div className="w-full max-w-lg p-6 bg-[#333333] rounded-lg shadow-xl text-white text-center flex flex-col items-center">
       <FaExclamationCircle className="text-red-500 text-5xl sm:text-7xl mb-4" />
-      <h1 className="mb-2 text-red-500 text-4xl sm:text-6xl font-extrabold">
+      <h1 className="mb-2 text-red-500 text-4xl sm:text-6xl">
         Error!!!
       </h1>
       <p className="text-2xl sm:text-3xl font-bold mb-2 text-blue-500">
         An error occurred: {error}
       </p>
-      <p className="text-xl sm:text-2xl font-bold text-yellow-500">
+      <p className="text-xl sm:text-2xl font-bold text-yellow-200">
         Please try again later. 
       </p>
     </div>
@@ -55,7 +55,7 @@ const GamesSide: React.FC = () => {
   <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#333333] bg-opacity-75">
     <div className="w-full max-w-lg p-6 bg-[#333333] rounded-lg shadow-xl text-white text-center flex flex-col items-center">
       <FaInfoCircle className="text-gray-400 text-5xl sm:text-9xl mb-4" />
-      <h1 className="text-gray-400 text-3xl sm:text-5xl font-extrabold mb-4">
+      <h1 className="text-gray-400 text-3xl sm:text-5xl font-bold mb-4">
         No Games Found
       </h1>
       <p className="text-xl sm:text-2xl font-bold mb-2 text-yellow-500">
@@ -70,38 +70,38 @@ const GamesSide: React.FC = () => {
         .map((game, index) => (
           <motion.div
           key={index}
-          className="bg-[#333333] bg-opacity-50 rounded-xl shadow-md p-2 flex flex-col items-center transition duration-300 ease-in-out transform hover:scale-105 mb-2"
+          className=" glassmorphism-container p-4 text-white flex flex-col items-center transition duration-300 ease-in-out transform mb-2" style={{ boxShadow: '0 0 5px rgba(255, 255, 255, .7)' }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 * index }}
         >
-            <div className='bg-white rounded-3xl shadow-xl h-full'>
-              <div className='h-full grid rounded-3xl max-w-sm shadow-sm bg-slate-100 flex-col'>
+            <div className='rounded-3xl h-full'>
+              <div className=' rounded-xl h-full grid  max-w-sm flex-col'>
                 <img
                   src={game.background_image}
                   width='390'
                   height='200'
-                  className='rounded-t-3xl justify-center grid h-80 object-cover transition duration-300 ease-in-out transform hover:scale-110'
+                  className='rounded-xl justify-center grid h-80 object-cover transition duration-300 ease-in-out transform hover:scale-95'
                   alt={game.name}
                 />
-                <div className='group p-6 grid z-10'>
-                  <a className='text-gray-300 group-hover:text-cyan-700 font-bold text-xl sm:text-xl line-clamp-2 text-center'>
+                <div className=' group p-6 grid z-10'>
+                  <a className=' text-white font-bold text-xl sm:text-xl line-clamp-2 text-center'>
                     {game.name}
                   </a>
-                  <span className='text-gray-500 pt-2 font-semibold text-center'>({new Date(game.released).toLocaleDateString()})</span>
+                  <span className='text-white/70 pt-2 font-semibold text-center'>({new Date(game.released).toLocaleDateString()})</span>
                   <div className="h-28 mb-2 flex items-center">
-                    <span className="text-gray-500 text-sm">
+                    <span className="text-white/80 text-sm">
                       <strong>PLATFORMS:</strong> {game.platforms.map((platform) => platform.platform.name).join(', ')}
                     </span>
                   </div>
                   <div className='grid-cols-2 flex group justify-between'>
-                    <div className='font-black flex flex-col'>
-                      <span className='text-yellow-500 text-xl'>SCORE</span>
-                      <span className='text-gray-300 text-2xl flex gap-x-1 items-center group-hover:text-yellow-600'>{game.rating}</span>
+                    <div className=' flex flex-col'>
+                      <span className='font-bold text-yellow-500 text-xl'>SCORE</span>
+                      <span className='text-gray-200 text-xl flex gap-x-1 items-center'>{game.rating} <span className='hover:animate-ping'><FaStar/></span></span>
                     </div>
                     <div className='flex flex-col items-end'>
-                      <div className='h-7' />
-                      <span className='text-2xl font-bold gap-x-2 text-gray-500'># {index + 1}</span>
+                      <div className='h-7'/>
+                      <span className='text-2xl  font-bold gap-x-2 text-red-500'># {index + 1}</span>
                     </div>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ const GamesSide: React.FC = () => {
           </motion.div>
         ))
         }
-      </motion.div> // Aqui
+      </motion.div> 
     </div>
   );
 };
