@@ -1,7 +1,5 @@
-import { Link } from 'wouter';
-// import { useLocation } from 'wouter';
-// import { signOut } from 'firebase/auth';
-// import { auth } from '../utils/firebase';
+import { Link, useLocation } from 'wouter';
+import { auth } from '../utils/firebase';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -71,6 +69,14 @@ function Home() {
         description: 'We strive to deliver detailed and entertaining content, maintaining high standards in everything we create',
       },
     ];
+
+    const [, setLocation] = useLocation();
+    const user = auth.currentUser;
+
+    if (!user) {
+      setLocation('/');
+      return null;
+    }
 
     return (
         <>

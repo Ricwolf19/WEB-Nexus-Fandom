@@ -1,29 +1,32 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import { auth } from '../utils/firebase';
 import { AiOutlineMenu } from "react-icons/ai";
 import imgLogo from "../assets/logo.jpg";
-// import firebase from "firebase/app"; // Asegúrate de importar Firebase
-import "firebase/auth";
+
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [location] = useLocation();
+
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
 
-  // const handleLogout = () => {
-  //   firebase.auth().signOut() // Cerrar sesión usando Firebase
-  //     .then(() => {
-  //       // Cierre de sesión exitoso, puedes redirigir al usuario a la página de inicio de sesión o hacer lo que sea necesario.
-  //     })
-  //     .catch((error) => {
-  //       // Maneja los errores si ocurrieron al cerrar la sesión.
-  //       console.error(error);
-  //     });
-  // };
+  const [, setLocation] = useLocation();
+  const handleLogout = () => {
+    auth.signOut() // Cerrar sesión usando Firebase
+      .then(() => {
+        setLocation('/');
+        return null;
+      })
+      .catch((error) => {
+        // Maneja los errores si ocurrieron al cerrar la sesión.
+        console.error(error);
+      });
+  };
 
 
   return (
@@ -51,7 +54,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden md:flex gap-6">
-          <button  className="border-2 border-red-500 bg-red-500/30 hover:bg-red-500 p-2 rounded font-bold">
+          <button onClick={handleLogout} className="border-2 border-red-500 bg-red-500/30 hover:bg-red-500 p-2 rounded font-bold">
             Log Out
           </button>
         </div>
@@ -63,7 +66,7 @@ const Header = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="w-full h-screen p-5 md:hidden absolute bg-gray-900 ">
+        <div className="w-screen h-screen p-5 md:hidden absolute bg-gray-900 ">
           <div className="flex flex-col space-y-4">
             <Link href="/home" className={`hover:text-gray-300 ${location === "/home" ? "border-b-2 border-yellow-500" : "hover:border-b-2 hover:border-yellow-500"}`}>
               Home
@@ -80,7 +83,7 @@ const Header = () => {
             <Link href="/contact-side" className={`hover:text-gray-300 ${location === "/contact-side" ? "border-b-2 border-indigo-500" : "hover:border-b-2 hover:border-indigo-500"}`}>
               Contact Us
             </Link>
-            <button  className={`hover:text-gray-300 hover:border-b-2 hover:border-red-500`}>
+            <button onClick={handleLogout} className={`text-left hover:text-gray-300 hover:border-b-2 hover:border-red-500`}>
               Log Out
             </button>
           </div>
