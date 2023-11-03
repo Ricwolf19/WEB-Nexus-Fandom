@@ -3,7 +3,7 @@ body {
 }
 #hero1 {
     position: relative;
-    background-image: url('/src/assets/img-bg/background-image.jpg');
+    background-image: url('/src/assets/img-bg/bg-image.png');
     background-size: cover; 
     background-position: center; 
 }
@@ -15,10 +15,45 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background: linear-gradient(to bottom, transparent 45%, #191919 ); /* Cambia los valores del gradiente según sea necesario */
+    background: linear-gradient(to bottom, transparent 45%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
 }
 #hero2 {
     background-image: url('/src/assets/img-bg/background-image2.jpeg');
     background-size: cover; 
     background-position: center; 
 }
+
+.animate-gradient {
+    animation: gradientAnimation 5s linear infinite;
+    background-size: 200% 100%; /* Controla la velocidad de la animación */
+  }
+  
+  
+.glassmorphism-container {
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glassmorphism-container:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

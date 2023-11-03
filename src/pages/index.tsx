@@ -20,8 +20,7 @@ const Index = () => {
                 <div className='w-1/2 flex justify-center items-center gap-5'>
                   <Link href='/login' className='w-1/2 h-10 flex justify-center items-center bg-red-500 text-white font-bold rounded-sm hover:bg-red-700 '>Log In</Link>
                   <Link href='/register' className='w-1/2 h-10 flex justify-center items-center bg-red-500 text-white font-bold rounded-sm hover:bg-red-700 '>Register</Link>
-                </div>
-              <Link href='/home' className='hover:text-gray-300'>Enter as a guest?</Link>              
+                </div>            
             </div>
         </div>
     </>
