@@ -1,6 +1,6 @@
 import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
-import imgDedsec from '../assets/img-index/img-dedsec.jpg'
+import imgDedsec from '../assets/img-index/img-dedsec.jpg';
 import { Link } from 'wouter';
 
 const Index = () => {
