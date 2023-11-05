@@ -4,6 +4,7 @@ import Header from "../components/header";
 import ContactForm from "../components/contact-form";
 import '../style.css';
 import { motion } from 'framer-motion';
+import Footer from '../components/footer';
 
 const ContactUs = () => {
     const [, setLocation] = useLocation();
@@ -24,7 +25,7 @@ const ContactUs = () => {
         >
             <Header />
             <motion.div
-            className="bg-[#5f5f5f] bg-opacity-25 md:col-span-8 p-10 border-red-600"
+            className="bg-[#5f5f5f] bg-opacity-20 md:col-span-8 p-10 border-red-600"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -107,6 +108,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </motion.div>
+            <Footer/>
         </motion.div>
     );
 }
