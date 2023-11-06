@@ -27,7 +27,7 @@ const ContactForm = () => {
       <form className="bg-opacity-50" onSubmit={handleSubmit}>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-first-name">
+            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" htmlFor="grid-first-name">
               First Name
             </label>
             <input
@@ -46,7 +46,7 @@ const ContactForm = () => {
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-last-name">
+            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" htmlFor="grid-last-name">
               Last Name
             </label>
             <input
@@ -67,7 +67,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-email">
+            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" htmlFor="grid-email">
               Email Address
             </label>
             <input
@@ -88,7 +88,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" htmlFor="grid-message">
+            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" htmlFor="grid-message">
               Your Message
             </label>
             <textarea
