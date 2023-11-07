@@ -4,6 +4,8 @@ import Header from '../components/header';
 import Store from '../components/store';
 import { Link } from 'wouter';
 
+import '../stores.css';
+
 const StoresSide = () => {
   const [, setLocation] = useLocation();
   const user = auth.currentUser;

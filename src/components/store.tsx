@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stores.css';
 
 // Define the expected props for the Store component
 type StoreProps = {
@@ -12,11 +13,11 @@ const Store: React.FC<StoreProps> = ({ name, mapSrc }) => {
     <div className="store">
       <h3>{name}</h3>
       {/* Container for the embedded Google Map */}
-      <div className="map-container">
+      <div className="map-container grid place-items-center h-full border-4 border-solid border-black ">
         <iframe
           title={name} // Set the title of the iframe to the store's name
-          width="400"
-          height="250"
+          width="100%"
+          height="100%"
           loading="lazy"
           src={mapSrc} // Source URL for the embedded map
           style={{ border: 0 }} // Remove iframe border

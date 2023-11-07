@@ -1,0 +1,13 @@
+.store {
+    background-color: #dfdfdf;
+    text-align: center;
+    color: black;
+    font-size: larger;
+    padding: 30px;
+}
+
+.map-container {
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+}
