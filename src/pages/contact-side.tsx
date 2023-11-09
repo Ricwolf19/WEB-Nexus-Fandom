@@ -6,6 +6,8 @@ import '../style.css';
 import { motion } from 'framer-motion';
 import Footer from '../components/footer';
 
+import imgDeadpool from '../assets/img-contact/img-deadpool.png';
+
 const ContactUs = () => {
     const [, setLocation] = useLocation();
     const user = auth.currentUser;
@@ -15,6 +17,8 @@ const ContactUs = () => {
         return null;
     }
 
+
+    
     return (
         <motion.div
         className="min-h-screen flex flex-col bg-gray-950 text-white"
@@ -28,6 +32,7 @@ const ContactUs = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             >
                 <div className="max-w-screen-lg mx-auto p-5">
+                    <img src={imgDeadpool} alt="" className='w-3/5 block m-auto md:w-2/5 '/>
                     <div className="grid grid-cols-1 md:grid-cols-12 ">
                         <div className=" bg-gray-800 bg-opacity-95 md:col-span-4 p-10 text-white">
                             <p className="text-sm font-regular uppercase mb-6">
@@ -37,7 +42,7 @@ const ContactUs = () => {
                                 Get In <span className="text-yellow-300">Touch</span>
                             </h3>
                             <p className="mt-4 leading-7 text-gray-200 text-justify mb-6">
-                                Welcome to NexusFandom, your ultimate destination for news, analysis, and everything related to the geek world. Have a question or comment? Feel free to reach out!
+                                Welcome to <span className='font-bold'>NexusFandom</span>, your ultimate destination for news, analysis, and everything related to the geek world. Have a question or comment? Feel free to reach out!
                             </p><br />
                             <div className="flex items-center mt-5">
                                 <svg className="h-6 mr-2 text-yellow-300" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489.536 489.536" xmlnsXlink="http://www.w3.org/1999/xlink" enableBackground="new 0 0 489.536 489.536">
@@ -104,6 +109,7 @@ const ContactUs = () => {
             </motion.div>
             <Footer/>
         </motion.div>
+        
     );
 }
 

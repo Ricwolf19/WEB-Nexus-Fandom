@@ -31,7 +31,7 @@ const ContactForm = () => {
               First Name
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-800/50 focus:text-gray-50 placeholder:text-[#b8b8b8]"
               type="text"
               id="grid-first-name"
               placeholder="Jane"
@@ -50,7 +50,7 @@ const ContactForm = () => {
               Last Name
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-800/50 focus:text-gray-50 placeholder:text-[#b8b8b8]"
               type="text"
               id="grid-last-name"
               placeholder="Doe"
@@ -71,7 +71,7 @@ const ContactForm = () => {
               Email Address
             </label>
             <input
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
+              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-800/50 focus:text-gray-50 placeholder:text-[#b8b8b8]"
               type="email"
               id="grid-email"
               placeholder="jane@exp.com"
@@ -93,7 +93,7 @@ const ContactForm = () => {
             </label>
             <textarea
               rows={10}
-              className="appearance-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-[#7a7a7a] focus:text-gray-50 placeholder:text-[#b8b8b8]"
+              className="appearance-none resize-none bg-transparent border-b border-red-500 w-full text-gray-100 mr-3 p-4 leading-tight focus:outline-none focus:bg-gray-800/50 focus:text-gray-50 placeholder:text-[#b8b8b8]"
               placeholder="Your message here..."
               id="grid-message"
               aria-label="Your message"
@@ -108,7 +108,7 @@ const ContactForm = () => {
           </div>
           <div className="flex justify-between w-full px-3 mt-2">
             <button
-              className="shadow bg-red-600 hover:bg-red-400 focus:shadow-outline focus:outline-none text-gray-100 font-bold py-2 px-6 rounded placeholder:text-[#b8b8b8]"
+              className="shadow bg-red-600 hover:bg-red-800 focus:shadow-outline focus:outline-none text-gray-100 font-bold py-2 px-6 rounded placeholder:text-[#b8b8b8]"
               type="submit"
               disabled={state.submitting}
             >
