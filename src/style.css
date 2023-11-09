@@ -24,11 +24,6 @@ body {
     z-index: 0;
     background: linear-gradient(to bottom, transparent 45%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
 }
-#hero2 {
-    background-image: url('/src/assets/img-bg/background-image2.jpeg');
-    background-size: cover; 
-    background-position: center; 
-}
 
 .animate-gradient {
     animation: gradientAnimation 5s linear infinite;
