@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import imgDedsec from '../assets/img-index/img-dedsec.jpg';
