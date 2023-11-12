@@ -4,6 +4,8 @@ import Header from '../components/header';
 import Store from '../components/store';
 import { Link } from 'wouter';
 
+import '../stores.css';
+
 const StoresSide = () => {
   const [, setLocation] = useLocation();
   const user = auth.currentUser;
@@ -45,30 +47,30 @@ const StoresSide = () => {
   const comicStores = maps.slice(3); // Comic stores
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
+    <div className="min-h-screen flex flex-col bg-black text-white storeBody">
       <Header />
       <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
         <div className="mb-8 md:mb-0">
-          <h1 className="text-2xl font-bold">Game Stores</h1>
+          <h1 className="text-center text-2xl font-bold py-4">Game Stores</h1>
           {gameStores.map((map, index) => (
             <Store key={index} name={map.name} mapSrc={map.mapSrc} />
           ))}
         </div>
         <div>
-          <h1 className="text-2xl font-bold">Comic Stores</h1>
+          <h1 className="text-center text-2xl font-bold py-4">Comic Stores</h1>
           {comicStores.map((map, index) => (
             <Store key={index} name={map.name} mapSrc={map.mapSrc} />
           ))}
         </div>
         {/* Add a link to go back to the index */}
-        <div className="my-4">
+      </div>
+      <div className="my-4 text-center">
           <Link href="/">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Back to Index
-            </button>
+          <a href="#" className="inline-flex items-center justify-center h-16 px-10 py-0 text-xl font-semibold text-center text-white no-underline 
+          align-middle transition-all duration-300 ease-in-out bg-green-600 border-2 border-green-600 border-solid rounded-full 
+          cursor-pointer select-none hover:border-white focus:shadow-xs focus:no-underline">Back to Index</a>      
           </Link>
         </div>
-      </div>
     </div>
   );
 };
