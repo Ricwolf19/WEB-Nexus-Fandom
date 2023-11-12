@@ -63,14 +63,14 @@ const StoresSide = () => {
           ))}
         </div>
         {/* Add a link to go back to the index */}
-        <div className="my-4">
+      </div>
+      <div className="my-4 text-center">
           <Link href="/">
-            <button className="bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
-              Back to Index
-            </button>
+          <a href="#" className="inline-flex items-center justify-center h-16 px-10 py-0 text-xl font-semibold text-center text-white no-underline 
+          align-middle transition-all duration-300 ease-in-out bg-green-600 border-2 border-green-600 border-solid rounded-full 
+          cursor-pointer select-none hover:border-white focus:shadow-xs focus:no-underline">Back to Index</a>      
           </Link>
         </div>
-      </div>
     </div>
   );
 };
