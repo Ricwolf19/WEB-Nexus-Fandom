@@ -1,13 +1,19 @@
+.storeBody{
+    background-image: url("../src/assets/img-stores/store_bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .store {
-    background-color: #dfdfdf;
     text-align: center;
     color: black;
-    font-size: larger;
     padding: 30px;
 }
 
 .map-container {
+    height: 100%;
+    width: 100%;
     align-items: center;
-    border-radius: 20px;
-    padding: 10px;
+    padding: 0;
 }
