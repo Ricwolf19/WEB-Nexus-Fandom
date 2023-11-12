@@ -35,7 +35,7 @@ const MarvelComponent: React.FC = () => {
               {filteredCharacters?.map(character => (
                 <div
                   key={character.id}
-                  className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center"
+                  className="bg-white text-center text-black rounded-lg shadow-md p-2 flex flex-col items-center"
                 >
                   <Link href={`/marvel-side/character/${character.id}`}>
                     <img
