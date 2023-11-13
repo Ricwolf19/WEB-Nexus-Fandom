@@ -2,6 +2,7 @@ import { Link, useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import '../style.css';
 
 import img1 from '../assets/img-home/img-1.png';
 import img2 from '../assets/img-home/img-2.jpeg';

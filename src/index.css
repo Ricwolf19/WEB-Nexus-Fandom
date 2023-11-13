@@ -1,9 +1,16 @@
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-.div-image {
+body {
+    background-color: black;
+}
+ /* Home page style */
+ .div-image {
   display: inline-block;
   position: relative;
 }
@@ -31,16 +38,80 @@
   background-size: 200% 100%; /* Controla la velocidad de la animación */
 }
 
+/* Video game page style */
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+#hero1 {
+    position: relative;
+    background-image: url('/src/assets/img-bg/bg-image.png');
+    background-size: cover; 
+    background-position: center; 
+}
+#hero1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(to bottom, transparent 45%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
 }
 
+.animate-gradient {
+    animation: gradientAnimation 5s linear infinite;
+    background-size: 200% 100%; /* Controla la velocidad de la animación */
+  }
+  
+  
+.glassmorphism-container {
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glassmorphism-container:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+/* Store page style */
+
+.storeBody{
+  background-image: url("../src/assets/img-stores/store_bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.store {
+  text-align: center;
+  color: black;
+  padding: 30px;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+/* CSS animations */
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
