@@ -25,18 +25,18 @@ const MarvelComponent: React.FC = () => {
           filteredCharacters!.length < 1 ? <div>No characters found</div> :
 
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" style={{fontFamily: 'comic sans ms'}}>
               {filteredCharacters?.map(character => (
                 <div
                   key={character.id}
-                  className="bg-white text-center text-black shadow-md rounded-lg flex flex-col items-center"
+                  className="bg-white text-center text-black shadow-md rounded-lg flex flex-col items-center border-double border-black border-4"
                 >
                   <Link href={`/marvel-side/character/${character.id}`}>
                     <img
                       src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
                       alt={character.name}
                       className="w-32 h-32"
-                      style={{height: '200px', width: '200px', borderRadius: '5px 5px 0 0'}}
+                      style={{height: '15rem', width: '20rem', borderRadius: '5px 5px 0 0'}}
                     />
                     <h3 className="py-2 text-md font-bold">{character.name}</h3>
                   </Link>
