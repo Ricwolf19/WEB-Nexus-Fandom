@@ -27,6 +27,23 @@ body {
     background-position: center; 
 }
 
+#marvelHero {
+  position: relative;
+  background-image: url('../src/assets/img-bg/bg-marvel.png');
+  background-size: cover; 
+  background-position: center; 
+}
+#marvelHero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(to bottom, transparent 45%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
+}
+
 .animate-gradient {
     animation: gradientAnimation 5s linear infinite;
     background-size: 200% 100%; /* Controla la velocidad de la animación */
