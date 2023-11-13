@@ -9,7 +9,7 @@ body {
     position: relative;
     background-image: url('/src/assets/img-bg/bg-image.png');
     background-size: cover; 
-    background-position: center; 
+    background-position: top; 
 }
 #hero1::before {
     content: "";
@@ -19,7 +19,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background: linear-gradient(to bottom, transparent 45%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
+    background: linear-gradient(to bottom, #fff 20%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
 }
 #hero2 {
     background-image: url('/src/assets/img-bg/background-image2.jpeg');
@@ -29,7 +29,7 @@ body {
 
 #marvelHero {
   position: relative;
-  background-image: url('../src/assets/img-bg/bg-marvel.png');
+  background-image: url('../src/assets/img-bg/bg_marvel.png');
   background-size: cover; 
   background-position: center; 
 }

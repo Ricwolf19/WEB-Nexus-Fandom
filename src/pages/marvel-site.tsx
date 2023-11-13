@@ -27,7 +27,7 @@ const MarvelSiteFront: React.FC = () => {
         transition={{ duration: 1 }}
       >
         <div className="h-screen flex items-center justify-center" >
-          <div className="mx-2 mt-10 md:mt-20 text-center">
+          <div className="mx-2 mt-10 md:mt-10 text-center">
             <motion.h1
               className="text-white font-bold text-3xl xs:text-4xl md:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: -20 }}
