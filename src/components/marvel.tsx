@@ -29,15 +29,16 @@ const MarvelComponent: React.FC = () => {
               {filteredCharacters?.map(character => (
                 <div
                   key={character.id}
-                  className="bg-white text-center text-black rounded-lg shadow-md p-2 flex flex-col items-center"
+                  className="bg-white text-center text-black shadow-md rounded-lg flex flex-col items-center"
                 >
                   <Link href={`/marvel-side/character/${character.id}`}>
                     <img
                       src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
                       alt={character.name}
-                      className="rounded-full w-32 h-32"
+                      className="w-32 h-32"
+                      style={{height: '200px', width: '200px', borderRadius: '5px 5px 0 0'}}
                     />
-                    <h3 className="text-md font-bold">{character.name}</h3>
+                    <h3 className="py-2 text-md font-bold">{character.name}</h3>
                   </Link>
                 </div>
               ))}

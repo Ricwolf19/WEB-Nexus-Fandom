@@ -17,7 +17,7 @@ const MarvelSiteFront: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
+    <div className="min-h-screen flex flex-col text-white">
         <Header />
         <motion.header
         id='marvelHero'
@@ -49,7 +49,7 @@ const MarvelSiteFront: React.FC = () => {
           
         </div>
       </motion.header>
-      <div>
+      <div className='marvelBody'>
         <div className='h-2 bg-gradient-to-r from-[#FF0000] to-[#FCBA03] animate-gradient '></div>
         <MarvelComponent /> 
       </div>

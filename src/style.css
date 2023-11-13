@@ -44,6 +44,13 @@ body {
   background: linear-gradient(to bottom, transparent 45%, rgb(3,7,18) ); /* Cambia los valores del gradiente según sea necesario */
 }
 
+.marvelBody {
+  background-image: url('../src/assets/img-bg/bg_marvel_cards.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .animate-gradient {
     animation: gradientAnimation 5s linear infinite;
     background-size: 200% 100%; /* Controla la velocidad de la animación */
