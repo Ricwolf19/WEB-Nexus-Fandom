@@ -76,20 +76,25 @@ const MarvelComponent: React.FC = () => {
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" style={{ fontFamily: 'comic sans ms' }}>
           {filteredCharacters?.map(character => (
-            <div
+            <motion.div
               key={character.id}
               className="bg-white text-center text-black shadow-md rounded-lg flex flex-col items-center border-double border-black border-4"
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} // Escala al pasar el cursor
+              whileTap={{ scale: 0.95, transition: { duration: 0.3 } }} // Escala al hacer clic
+              style={{ overflow: 'hidden' }} // Oculta el desbordamiento de la imagen
             >
               <Link href={`/marvel-side/character/${character.id}`}>
-                <img
+                <motion.img
                   src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
                   alt={character.name}
                   className="w-32 h-32"
                   style={{ height: '15rem', width: '20rem', borderRadius: '5px 5px 0 0' }}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} // Escala al pasar el cursor
+                  whileTap={{ scale: 0.95, transition: { duration: 0.3 } }} // Escala al hacer clic
                 />
                 <h3 className="py-2 text-md font-bold">{character.name}</h3>
               </Link>
-            </div>
+            </motion.div>
           ))}
         </div>
       )}
