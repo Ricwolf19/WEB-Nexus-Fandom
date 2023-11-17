@@ -27,7 +27,7 @@ const ContactUs = () => {
         >
             <Header />
             <motion.div
-            className="bg-gray-950 bg-opacity-20 md:col-span-8 p-10 rounded"
+            className="md:col-span-8 p-10 rounded"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}

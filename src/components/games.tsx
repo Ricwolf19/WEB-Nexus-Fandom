@@ -16,7 +16,7 @@ const GamesSide: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 items-center">
+    <div className="container mx-auto px-4 items-center mb-10">
       <SearchBar onSubmit={handleSearchSubmit} />
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
