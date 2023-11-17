@@ -2,7 +2,6 @@ import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from '../components/header';
 import Store from '../components/store';
-import { Link } from 'wouter';
 
 import '../stores.css';
 import Footer from '../components/footer';
