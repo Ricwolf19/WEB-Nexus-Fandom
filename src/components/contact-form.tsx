@@ -6,7 +6,7 @@ const ContactForm = () => {
     if (state.succeeded) {
       return (
         <div className="h-full flex flex-wrap items-center justify-center">
-            <div className="max-w-xl p-8 text-center bg-[#333333] shadow-xl rounded-3xl">
+            <div className="max-w-xl p-8 text-center bg-gray-800 shadow-xl rounded-3xl">
                 <h3 className="text-2xl mb-4 text-gray-200">
                 Thank you for reaching out to{" "}
                 <span className="text-red-500">Nexus</span>
