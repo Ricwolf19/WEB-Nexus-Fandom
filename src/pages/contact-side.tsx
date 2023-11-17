@@ -22,6 +22,7 @@ const ContactUs = () => {
     return (
         <motion.div
         id="hero2"
+        rel='preload'
         className="min-h-screen flex flex-col bg-gray-950 text-white"
         transition={{ duration: 0.5 }}
         >

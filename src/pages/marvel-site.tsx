@@ -22,6 +22,7 @@ const MarvelSiteFront: React.FC = () => {
         <Header />
         <motion.header
           id='marvelHero'
+          rel='preload'
           className="bg-fixed bg-no-repeat bg-center bg-cover h-screen relative mb-2"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
