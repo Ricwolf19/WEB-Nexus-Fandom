@@ -5,7 +5,6 @@ import { getCharacters } from '../utils/marvelApi';
 import { FaClock, FaExclamationCircle } from 'react-icons/fa'; // Importa los íconos de React
 
 import SearchBar from './search-bar';
-import '../marvel_main.css';
 import { motion } from 'framer-motion';
 
 const MarvelComponent: React.FC = () => {
