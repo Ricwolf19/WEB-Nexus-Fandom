@@ -20,6 +20,7 @@ const Games = () => {
       <Header />
       <motion.header
         id='hero1'
+        rel='preload'
         className="bg-fixed bg-no-repeat bg-center bg-cover h-screen relative mb-16"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
