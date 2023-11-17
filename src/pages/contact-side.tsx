@@ -2,7 +2,7 @@ import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from "../components/header";
 import ContactForm from "../components/contact-form";
-import '../index.css';
+import '../style.css';
 import { motion } from 'framer-motion';
 import Footer from '../components/footer';
 

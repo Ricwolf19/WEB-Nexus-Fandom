@@ -1,0 +1,12 @@
+.store {
+    text-align: center;
+    color: black;
+    padding: 30px;
+}
+
+.map-container {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+}

@@ -30,8 +30,8 @@ const Header = () => {
 
 
   return (
-    <nav className="bg-gray-950 text-white p-4 m:py-4 sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gray-950 text-white  md:py-4 sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center p-2">
         <div className="flex justify-center items-center">
           <img className="w-16" src={imgLogo} alt="" />
           <h1 className="font-bold text-2xl md:text-3xl">Nexus-Fandom</h1>
@@ -66,7 +66,7 @@ const Header = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="w-screen h-screen p-5 md:hidden absolute bg-gray-900 ">
+        <div className="w-full h-screen p-5 md:hidden absolute bg-gray-900 ">
           <div className="flex flex-col space-y-4">
             <Link href="/home" className={`hover:text-gray-300 ${location === "/home" ? "border-b-2 border-yellow-500" : "hover:border-b-2 hover:border-yellow-500"}`}>
               Home

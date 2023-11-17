@@ -4,7 +4,7 @@ import { getGames } from '../utils/gamesApi';
 import type { Game } from '../types';
 import SearchBar from './search-bar';
 import { FaClock, FaExclamationCircle, FaInfoCircle, FaStar } from 'react-icons/fa';
-import '../style.css';
+import '../index.css';
 import { motion } from "framer-motion";
 
 const GamesSide: React.FC = () => {

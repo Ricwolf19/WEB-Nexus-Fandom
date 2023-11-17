@@ -1,10 +1,9 @@
 import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from '../components/header';
-import Footer from '../components/footer';
 import Store from '../components/store';
+import '../stores.css';
 
-import '../index.css';
 
 const StoresSide = () => {
   const [, setLocation] = useLocation();
@@ -47,7 +46,7 @@ const StoresSide = () => {
   const comicStores = maps.slice(3); // Comic stores
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white storeBody">
+    <div className="min-h-screen flex flex-col bg-gray-950 text-white">
       <Header />
       <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
         <div className="mb-8 md:mb-0">
@@ -62,11 +61,8 @@ const StoresSide = () => {
             <Store key={index} name={map.name} mapSrc={map.mapSrc} />
           ))}
         </div>
-        {/* Add a link to go back to the index */}
       </div>
-      <Footer/>
     </div>
-
   );
 };
 
