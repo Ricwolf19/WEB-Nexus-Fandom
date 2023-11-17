@@ -5,6 +5,7 @@ import Store from '../components/store';
 import { Link } from 'wouter';
 
 import '../stores.css';
+import Footer from '../components/footer';
 
 const StoresSide = () => {
   const [, setLocation] = useLocation();
@@ -47,7 +48,7 @@ const StoresSide = () => {
   const comicStores = maps.slice(3); // Comic stores
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white storeBody">
+    <div className="min-h-screen flex flex-col bg-black text-white storeBody bg-fixed bg-no-repeat bg-center bg-cover h-full relative w-full">
       <Header />
       <div className="stores-container p-8 grid gap-8 md:grid-cols-2">
         <div className="mb-8 md:mb-0">
@@ -64,13 +65,7 @@ const StoresSide = () => {
         </div>
         {/* Add a link to go back to the index */}
       </div>
-      <div className="my-4 text-center">
-          <Link href="/">
-          <a href="#" className="inline-flex items-center justify-center h-16 px-10 py-0 text-xl font-semibold text-center text-white no-underline 
-          align-middle transition-all duration-300 ease-in-out bg-green-600 border-2 border-green-600 border-solid rounded-full 
-          cursor-pointer select-none hover:border-white focus:shadow-xs focus:no-underline">Back to Index</a>      
-          </Link>
-        </div>
+      <Footer/>
     </div>
   );
 };

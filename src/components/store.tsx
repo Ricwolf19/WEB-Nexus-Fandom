@@ -10,7 +10,7 @@ type StoreProps = {
 // Store component that displays the store name and an embedded map
 const Store: React.FC<StoreProps> = ({ name, mapSrc }) => {
   return (
-    <div className="glassmorphism-container p-5 flex flex-col items-center transition duration-300 ease-in-out transform mb-2">
+    <div className="glassmorphism-container p-5 flex flex-col items-center transition duration-300 ease-in-out transform mb-6 mx-2">
       <h3 className='text-white font-bold font-l pb-2'>{name}</h3>
       {/* Container for the embedded Google Map */}
       <div className="map-container grid place-items-center h-full border-4 border-double">

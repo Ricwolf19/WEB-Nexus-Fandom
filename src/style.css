@@ -40,7 +40,7 @@ body {
 /* Estilos para #marvelHero */
 #marvelHero {
   position: relative;
-  background-image: url('../src/assets/img-bg/bg_marvel.png');
+  background-image: url('../src/assets/img-bg/bg_marvel.jpg');
   background-size: cover; 
   background-position: center; 
   animation: fadeIn 1s ease-in-out forwards; /* Animación de aparición */
