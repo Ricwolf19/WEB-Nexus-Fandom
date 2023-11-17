@@ -22,7 +22,12 @@ const MarvelComponent: React.FC = () => {
 
         error ? <div>{error}</div> :
 
-          filteredCharacters!.length < 1 ? <div>No characters found</div> :
+          filteredCharacters!.length < 1 ? <div className='font-bold text-center text-white'>
+            <p className='sm: text-xl md:text-2xl lg:text-3xl mb-2'>No characters found with that name. Try another one or make sure you spelled it right!</p>
+            <div className='grid place-items-center'>
+            <img src="../src/assets/img-marvel/not-found.png" alt="" height={300} width={300}/>
+            </div>
+          </div> :
 
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" style={{fontFamily: 'comic sans ms'}}>
