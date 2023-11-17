@@ -7,25 +7,33 @@ import { motion, useAnimation } from "framer-motion";
 const Index = () => {
   const [, setLocation] = useLocation();
   const user = auth.currentUser;
-  let isMounted = true; // Variable para verificar si el componente está montado
 
   if (user) {
     setLocation('/home');
   }
 
+  // Define las opciones de animación
   const animationControls = useAnimation();
 
   useEffect(() => {
-    const startAnimation = async () => {
+    // Función para iniciar la animación
+    const startAnimation = () => {
       const animationInterval = setInterval(async () => {
-        // ... (tu lógica de animación actual)
-        if (!isMounted) {
-          clearInterval(animationInterval); // Detiene el intervalo si el componente se desmonta
-        }
-      }, 2000);
+        // Animación de movimiento aleatorio en el eje X y Y
+        const randomX = Math.random() * 20 - 10;
+        const randomY = Math.random() * 20 - 10;
+
+        await animationControls.start({ x: randomX, y: randomY, transition: { duration: 1 } });
+
+        // Animación de parpadeo constante
+        await animationControls.start({ opacity: 0.5, transition: { duration: 0.5 } });
+        await animationControls.start({ opacity: 1, transition: { duration: 0.5 } });
+
+        // Restaura la posición y la opacidad
+        await animationControls.start({ x: 0, y: 0, opacity: 1, transition: { duration: 0.5 } });
+      }, 2000); // Intervalo de tiempo entre animaciones (2 segundos)
 
       return () => {
-        isMounted = false; // Actualiza la variable cuando el componente se desmonta
         clearInterval(animationInterval);
       };
     };
@@ -36,6 +44,7 @@ const Index = () => {
   return (
     <>
       <div className="bg-black h-screen w-screen flex flex-col items-center">
+        {/* Utiliza el componente animado para la imagen */}
         <motion.img
           src={imgDedsec}
           alt=""
@@ -55,3 +64,8 @@ const Index = () => {
 };
 
 export default Index;
+
+
+
+
+
