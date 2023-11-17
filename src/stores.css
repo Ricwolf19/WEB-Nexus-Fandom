@@ -1,3 +1,10 @@
+.storeBody{
+    background-image: url("../src/assets/img-stores/store_bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .store {
     text-align: center;
     color: black;

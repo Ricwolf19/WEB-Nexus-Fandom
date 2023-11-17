@@ -2,8 +2,9 @@ import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from '../components/header';
 import Store from '../components/store';
-import '../stores.css';
 
+
+import '../stores.css';
 
 const StoresSide = () => {
   const [, setLocation] = useLocation();
