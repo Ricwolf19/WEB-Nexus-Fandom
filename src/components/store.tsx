@@ -11,7 +11,7 @@ type StoreProps = {
 const Store: React.FC<StoreProps> = ({ name, mapSrc }) => {
   return (
     <div className="glassmorphism-container p-4 text-black flex flex-col items-center transition duration-300 ease-in-out transform mb-2">
-      <h3 className='text-white'>{name}</h3>
+      <h3>{name}</h3>
       {/* Container for the embedded Google Map */}
       <div className="map-container grid place-items-center h-full border-4 border-double">
         <iframe

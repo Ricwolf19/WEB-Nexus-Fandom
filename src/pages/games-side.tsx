@@ -3,7 +3,7 @@ import { auth } from '../utils/firebase';
 import GamesSide from '../components/games';
 import Header from '../components/header';
 import { motion } from 'framer-motion';
-import '../index.css';
+import '../style.css';
 import Footer from '../components/footer';
 
 const Games = () => {

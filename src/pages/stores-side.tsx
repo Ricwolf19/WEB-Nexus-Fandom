@@ -1,10 +1,10 @@
 import { useLocation } from 'wouter';
 import { auth } from '../utils/firebase';
 import Header from '../components/header';
-import Footer from '../components/footer';
 import Store from '../components/store';
+import { Link } from 'wouter';
 
-import '../index.css';
+import '../stores.css';
 
 const StoresSide = () => {
   const [, setLocation] = useLocation();
@@ -64,9 +64,14 @@ const StoresSide = () => {
         </div>
         {/* Add a link to go back to the index */}
       </div>
-      <Footer/>
+      <div className="my-4 text-center">
+          <Link href="/">
+          <a href="#" className="inline-flex items-center justify-center h-16 px-10 py-0 text-xl font-semibold text-center text-white no-underline 
+          align-middle transition-all duration-300 ease-in-out bg-green-600 border-2 border-green-600 border-solid rounded-full 
+          cursor-pointer select-none hover:border-white focus:shadow-xs focus:no-underline">Back to Index</a>      
+          </Link>
+        </div>
     </div>
-
   );
 };
 
